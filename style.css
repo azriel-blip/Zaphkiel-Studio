@@ -1,0 +1,464 @@
+/* RESET & FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* PALET WARNA (BIRU TUA & BIRU TELUR ASIN) */
+:root {
+    --biru-tua: #0f172a;        /* Deep Navy */
+    --biru-tua-light: #1e293b;  /* Background Sekunder */
+    --telur-asin: #81e6d9;      /* Soft Cyan / Telur Asin */
+    --telur-asin-dark: #4fd1c5; /* Telur Asin Hover */
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+body {
+    background-color: var(--biru-tua);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER & NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.logo span {
+    color: var(--telur-asin);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--telur-asin);
+}
+
+/* TOMBOL GLOBAL */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--telur-asin);
+    color: var(--biru-tua);
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--telur-asin);
+    border-color: var(--telur-asin);
+}
+
+/* FORMAT UMUM SECTION */
+section {
+    padding: 100px 0 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+section h2 span {
+    color: var(--telur-asin);
+}
+
+/* HOME SECTION */
+.hero-section {
+    background: linear-gradient(135deg, var(--biru-tua) 60%, var(--biru-tua-light));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h3 {
+    font-size: 22px;
+    color: var(--telur-asin);
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Foto Profil Styling */
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--telur-asin);
+    box-shadow: 0 0 25px rgba(129, 230, 217, 0.25);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-img img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 35px rgba(129, 230, 217, 0.45);
+}
+
+/* ABOUT SECTION */
+.about-section {
+    background-color: var(--biru-tua-light);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* SKILL SECTION */
+.skill-section {
+    background-color: var(--biru-tua);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background-color: var(--biru-tua-light);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    border-bottom: 4px solid transparent;
+}
+
+.skill-card i {
+    font-size: 45px;
+    color: var(--telur-asin);
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.skill-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--telur-asin);
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+    background-color: var(--biru-tua-light);
+}
+
+.gallery-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--biru-tua);
+    color: var(--text-light);
+    border: 2px solid transparent;
+    padding: 8px 22px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: transparent;
+    color: var(--telur-asin);
+    border-color: var(--telur-asin);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.gallery-item {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Sembunyikan Item Saat Di-filter */
+.gallery-item.hide {
+    transform: scale(0.8);
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.gallery-box {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.gallery-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+/* Overlay Efek Hover */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(79, 209, 197, 0.9));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-overlay h3 {
+    color: var(--text-light);
+    font-size: 20px;
+    margin-bottom: 5px;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+.gallery-overlay p {
+    color: var(--biru-tua);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+.gallery-box:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-box:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-box:hover .gallery-overlay h3,
+.gallery-box:hover .gallery-overlay p {
+    transform: translateY(0);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    background-color: var(--biru-tua);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--biru-tua-light);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--telur-asin);
+}
+
+.contact-form button {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--biru-tua);
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN (MOBILE & TABLET) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--biru-tua);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    }
+    
+    .nav-links.active { left: 0; }
+    .nav-links li { margin: 20px 0; }
+
+    /* Penataan Ulang Halaman Home di HP (Foto di atas teks) */
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+        padding-top: 20px;
+    }
+
+    .hero-img img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-content h1 { font-size: 36px; }
+    .hero-content p { font-size: 16px; }
+}
